@@ -1,0 +1,49 @@
+# Environment variables
+.env
+*.env
+.env.local
+.env.production
+
+# IDE
+.idea/
+.vscode/
+*.iml
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+DS_Store
+
+# Logs
+*.log
+logs/
+
+# Build outputs
+target/
+build/
+dist/
+
+# Dependencies
+node_modules/
+
+# Test coverage
+coverage/
+
+# Temporary files
+*.tmp
+*.temp
+
+# Kiro AI files (don't push these - they look AI-generated)
+.kiro/
+*.kiro
+
+# Spec files (internal planning - don't push)
+**/specs/
+GITHUB_PUSH_CHECKLIST.md
+PROJECT_SUMMARY.md
+CONTRIBUTING.md
+
+# Keep only essential deployment guides
+# (We'll keep README.md, DEPLOYMENT.md, and one platform guide)

@@ -1,0 +1,38 @@
+{
+  "nodes": [
+    {
+      "id": "input1",
+      "type": "customInput",
+      "data": {}
+    },
+    {
+      "id": "text1",
+      "type": "text",
+      "data": {
+        "text": "Hello {{ name }}! Welcome to the pipeline system."
+      }
+    },
+    {
+      "id": "output1",
+      "type": "customOutput",
+      "data": {}
+    }
+  ],
+  "edges": [
+    {
+      "source": "input1",
+      "target": "text1",
+      "sourceHandle": "value",
+      "targetHandle": "text1-name"
+    },
+    {
+      "source": "text1",
+      "target": "output1",
+      "sourceHandle": "output",
+      "targetHandle": "input"
+    }
+  ],
+  "inputs": {
+    "input1": "Alice"
+  }
+}
