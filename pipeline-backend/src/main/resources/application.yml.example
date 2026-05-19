@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: pipeline-backend
+
+server:
+  port: 8080
+
+# Gemini API Configuration
+# Set these values via environment variables or create a .env file
+gemini:
+  api:
+    key: ${GEMINI_API_KEY}  # Required: Your Google Gemini API key
+  project:
+    id: ${GEMINI_PROJECT_ID:}  # Optional: Your Google Cloud project ID
+  location: ${GEMINI_LOCATION:us-central1}  # Optional: API location
+
+logging:
+  level:
+    com.vectorshift: INFO
