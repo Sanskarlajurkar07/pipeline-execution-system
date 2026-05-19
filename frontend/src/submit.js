@@ -2,6 +2,8 @@
 
 import { useStore } from './store';
 
+const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:8080';
+
 export const SubmitButton = () => {
     const nodes = useStore((s) => s.nodes);
     const edges = useStore((s) => s.edges);
@@ -10,7 +12,7 @@ export const SubmitButton = () => {
 
     const handleSubmit = async () => {
         try {
-            const res = await fetch('http://localhost:8080/pipelines/parse', {
+            const res = await fetch(`${API_URL}/pipelines/parse`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ nodes, edges }),

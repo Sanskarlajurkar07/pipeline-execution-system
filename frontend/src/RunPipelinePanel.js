@@ -3,6 +3,8 @@
 import { useState, useEffect, useMemo } from 'react';
 import { useStore } from './store';
 
+const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:8080';
+
 export const RunPipelinePanel = () => {
     const { nodes, edges, showRunPanel, setRunPanel } = useStore();
 
@@ -40,7 +42,7 @@ export const RunPipelinePanel = () => {
                 inputPayload[nodeId] = inputValues[nodeId];
             });
 
-            const res = await fetch('http://localhost:8080/pipelines/run', {
+            const res = await fetch(`${API_URL}/pipelines/run`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ nodes, edges, inputs: inputPayload }),

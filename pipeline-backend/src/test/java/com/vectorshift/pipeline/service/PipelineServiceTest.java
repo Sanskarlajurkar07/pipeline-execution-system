@@ -1,5 +1,6 @@
 package com.vectorshift.pipeline.service;
 
+import com.vectorshift.pipeline.client.GeminiClient;
 import com.vectorshift.pipeline.model.Edge;
 import com.vectorshift.pipeline.model.Node;
 import com.vectorshift.pipeline.model.request.Pipeline;
@@ -8,6 +9,7 @@ import com.vectorshift.pipeline.model.response.ParseResponse;
 import com.vectorshift.pipeline.model.response.RunResponse;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.mockito.Mockito;
 
 import java.util.List;
 import java.util.Map;
@@ -21,10 +23,12 @@ import static org.assertj.core.api.Assertions.*;
 class PipelineServiceTest {
 
     private PipelineService service;
+    private GeminiClient geminiClient;
 
     @BeforeEach
     void setUp() {
-        service = new PipelineService();
+        geminiClient = Mockito.mock(GeminiClient.class);
+        service = new PipelineService(geminiClient);
     }
 
     @Test
